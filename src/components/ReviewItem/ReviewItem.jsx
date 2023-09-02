@@ -1,7 +1,7 @@
 import React from 'react';
 import './ReviewItem.css'
 import { BeakerIcon, TrashIcon } from '@heroicons/react/24/solid'
-const ReviewItem = ({ product }) => {
+const ReviewItem = ({ product, deleteFromCart }) => {
     const { id, name, img, price, shipping } = product;
     return (
         <div className='reviewItem'>
@@ -11,7 +11,7 @@ const ReviewItem = ({ product }) => {
                 <p>Price: <span className='orangeColor'>${price}</span></p>
                 <p>Shipping: <span className='orangeColor'>${shipping}</span></p>
             </div>
-            <button className='btn-delet'><TrashIcon/></button>
+            <button onClick={() => deleteFromCart(id)} className='btn-delet'><TrashIcon/></button>
         </div>
     );
 };
