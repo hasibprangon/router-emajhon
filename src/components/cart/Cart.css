@@ -22,3 +22,17 @@
     line-height: normal;
     letter-spacing: 0.032px;
 }
+
+.deleteAll {
+    border-radius: 4px;
+    background: #FF3030;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    color: white;
+}
+.delete_icon{
+    width: 24px;
+    height: 24px;
+}

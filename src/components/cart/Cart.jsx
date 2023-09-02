@@ -1,18 +1,19 @@
 import React from 'react';
 import './Cart.css'
+import { TrashIcon } from '@heroicons/react/24/solid'
 
 const Cart = (props) => {
     // const cart = props.cart;
 
-    const { cart } = props; //option2
+    const { cart, deleteAllFromCart } = props; //option2
 
     // console.log(cart);
 
     let total = 0;
     let totalShipping = 0;
     let quantity = 0;
-    for (const product of cart){
-        if(product.quantity === 0){
+    for (const product of cart) {
+        if (product.quantity === 0) {
             product.quantity === 1;
         }
 
@@ -22,7 +23,7 @@ const Cart = (props) => {
         quantity = quantity + product.quantity;
     };
 
-    const totalTax = total*7/100;
+    const totalTax = total * 7 / 100;
 
     const grandTotal = totalTax + totalShipping + total;
     return (
@@ -33,6 +34,10 @@ const Cart = (props) => {
             <p>Total Shipping charge: ${totalShipping.toFixed(3)}</p>
             <p>Tax: ${totalTax.toFixed(3)}</p>
             <h6>Grand total: ${grandTotal.toFixed(3)}</h6>
+            <button onClick={deleteAllFromCart} className='deleteAll'>
+                <span>Clear Cert</span>
+                <TrashIcon className='delete_icon' />
+            </button>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import './ReviewItem.css'
-import { BeakerIcon, TrashIcon } from '@heroicons/react/24/solid'
+import {TrashIcon } from '@heroicons/react/24/solid'
 const ReviewItem = ({ product, deleteFromCart }) => {
     const { id, name, img, price, shipping } = product;
     return (
